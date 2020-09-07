@@ -1,0 +1,11 @@
+/*************************
+ * Settings Page
+ ************************/
+
+table#settings {
+    & tr {
+         & td {
+             padding-left: 0;
+         }
+    }
+}

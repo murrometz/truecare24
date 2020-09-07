@@ -1,0 +1,304 @@
+$sidebarWidth: 70px;
+$contentPadding: 20px;
+$cellPadding: 10px;
+$inputPadding: 10px;
+$inputBorderRadius: 10px;
+$buttonHeight: 30px;
+$defaultColor: #354650;
+
+@import 'reset';
+@import 'media';
+@import 'global';
+@import 'colors';
+@import 'fonts/lato/lato.css';
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: #EBEFF4;
+    font-family: "Lato", sans-serif !important;
+    color: $defaultColor;
+    line-height: 1;
+}
+
+input, textarea, select {
+    background: #F5F9FC;
+    border: solid 1px #DBE5EB;
+    height: 35px;
+    border-radius: $inputBorderRadius;
+    padding: 0 $inputPadding;
+}
+
+textarea {
+    padding: $inputPadding;
+}
+
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #264E66;
+    height: 100%;
+    width: $sidebarWidth;
+
+    & > a {
+        width: 100%;
+        height: 50px;
+        margin: 20px 0;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+
+        &.main-link {background-image: url(/images/icons/TrueCare24_logo.png);}
+        &.dash-link {background-image: url(/images/icons/Dashboard.png);}
+        &.faq-link {background-image: url(/images/icons/FAQ.png);}
+        &.settings-link {background-image: url(/images/icons/Settings-new3.png);}
+        &.signout-link {background-image: url("/images/icons/Sign out.png");}
+
+        &:hover::after, &.active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 2px;
+            background: $blue
+        }
+    }
+
+    @include media(tablet) {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 80px;
+        justify-content: space-between;
+
+        & > a {
+            margin: 10px 0
+        }
+    }
+}
+
+section.main {
+    padding-left: $sidebarWidth;
+
+    @include media(tablet) {
+        padding-left: 0;
+    }
+
+    & header,
+    & main {
+        padding: $contentPadding;
+    }
+
+    & header {
+        background: white;
+        border-bottom: solid 1px #e2e6eb;
+        position: relative;
+
+        @include media(mobile) {
+            display: flex;
+            padding: $contentPadding 0;
+            justify-content: space-between;
+        }
+
+        & > * {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px;
+            text-decoration: none;
+            color: inherit;
+
+            @include media(tabletSmall) {
+                margin-right: 18px;
+            }
+
+            @include media(mobile) {
+                flex: 1 0 20%;
+                height: 35px;
+                margin-right: 0;
+            }
+        }
+
+        & .back-link {
+            padding-left: 30px;
+            background: url("/images/icons/Back 1.png") no-repeat;
+            font-weight: bold;
+
+            @include media(mobile) {
+                width: 20px;
+                background-position: center;
+            }
+        }
+
+        & .search-by-id {
+            min-width: 160px;
+
+            @include media(mobile) {
+                flex-basis: 43%;
+            }
+
+            form{
+                height: 35px;
+
+                & > * {
+                    display: inline-block;
+                    vertical-align: top;
+                    height: 100%;
+                }
+
+                & input[type=text] {
+                    width: 118px;
+                    border-right: none;
+                    border-radius: $inputBorderRadius 0 0 $inputBorderRadius;
+                    padding-left: $inputPadding;
+                    padding-right: $inputPadding;
+                    font-size: 0.9rem;
+
+                    &::placeholder {
+                        color: #7F95A4;
+                    }
+                }
+
+                & input[type=submit]{
+                    width: 40px;
+                    background: url("/images/icons/Go.png") no-repeat;
+                    border-radius:  0 $inputBorderRadius $inputBorderRadius 0;
+                }
+            }
+        }
+
+        & .kpi-link {
+            padding-left: 27px;
+            background: url("/images/icons/Fulfillment KPIs.png") no-repeat;
+
+            @include media(mobile) {
+                width: 20px;
+                background-position: center;
+            }
+        }
+
+        & .personal-link {
+            margin-right: 0;
+            position: absolute;
+            right: $contentPadding;
+            padding-right: 30px;
+            background: url("/images/icons/Dropdown.png") no-repeat;
+            background-position: right 10px center;
+
+            @include media(tabletSmall) {
+                background-image: url("/images/icons/Personal.svg");
+                background-position: center;
+                height: 25px;
+                width: 24px;
+                padding: 0;
+                text-indent: 200px;
+                overflow: hidden;
+                right: ($contentPadding + 5px);
+                margin-top: 5px;
+            }
+
+            @include media(mobile) {
+                position: relative;
+                display: flex;
+            }
+        }
+    }
+
+    .content-wrapper {
+        background: white;
+        border-radius: 10px;
+        padding: $contentPadding;
+
+        & .header {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        & form {
+            & button, & input[type=submit] {
+                margin-top: 10px;
+            }
+
+            .result-message {
+                margin-top: 10px;
+            }
+        }
+
+        @include media(mobile) {
+            padding: ($contentPadding - 5px)
+        }
+    }
+
+    table {
+        border-bottom: solid 1px #F4F7F9;
+
+        & thead + tbody tr:nth-child(2n), & thead tr {
+            background: #F4F7F9;
+        }
+
+        & td {
+            padding: $cellPadding
+        }
+
+        & td:last-of-type {
+            padding-right: 0;
+        }
+
+        & .table-title {
+            font-size: 80%;
+            color: #78909F;
+            height: auto !important;
+            & td {
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+            }
+        }
+
+        & .row-title {
+            color: #3e7fb7;
+            font-weight: bold;
+
+            & td{
+                position: relative;
+                padding-top: 30px;
+
+                &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 100%;
+                background: white;
+                height: 20px;
+            }}
+        }
+
+
+        @include media(tablet) {
+            display: block;
+
+            & tr {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                & td {
+                    display: block;
+                }
+            }
+        }
+
+    }
+}
+
+@import 'components/statuses';
+@import 'components/matched-providers';
+@import 'components/settings';
+@import 'components/tooltip';
+@import 'components/modal';

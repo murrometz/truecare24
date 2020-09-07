@@ -1,0 +1,143 @@
+// Media Queries
+
+$breakpoints: (
+  // Small mobiles
+  mobileSmall: 320px,
+  // Medium
+  mobileMedium: 375px,
+  // Big-mobiles
+  mobile: 425px,
+  // Phones in horisontal and tablets
+  tabletSmall: (580px),
+  // Phones in horisontal and tablets
+  tabletMedium: (635px),
+  // Phones in horisontal and tablets
+  tabletBig: (768px - 1px),
+  // Phones in horisontal and tablets
+  tablet: 900px,
+  // Max for Laptops
+  laptop: (1024px - 1px),
+  // Small Desktop max resolution
+  desktopMin: (1200px - 1px),
+  // Small Desktop max resolution
+  desktopMedium: (1370px - 1px),
+  // Medium Desktop max resolution
+  desktopWide: 1735px,
+  // Big Desktop max resolution
+  desktopMax: 1920px
+);
+
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+.visible-wide {
+  display: none !important;
+
+  @include media(desktopWide) {
+    display: initial !important;
+    @at-root div#{&}{
+      display: block !important;
+    }
+  }
+}
+
+.hidden-wide {
+  @include media(desktopWide) {
+    display: none !important;
+  }
+}
+
+.visible-desktop-medium {
+  display: none !important;
+
+  @include media(desktopMedium) {
+    display: initial !important;
+    @at-root div#{&}{
+      display: block !important;
+    }
+  }
+}
+
+.hidden-desktop-medium {
+  @include media(desktopMedium) {
+    display: none !important;
+  }
+}
+
+.visible-desktop-small {
+  display: none !important;
+
+  @include media(desktopMin) {
+    display: initial !important;
+    @at-root div#{&}{
+      display: block !important;
+    }
+  }
+}
+
+.hidden-desktop-small {
+  @include media(desktopMin) {
+    display: none !important;
+  }
+}
+
+.visible-laptop {
+  display: none !important;
+
+  @include media(laptop) {
+    display: initial !important;
+    @at-root div#{&}{
+      display: block !important;
+    }
+  }
+}
+
+.hidden-laptop {
+  @include media(laptop) {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  display: none !important;
+
+  @include media(tablet) {
+    display: initial !important;
+    @at-root div#{&}{
+      display: block !important;
+    }
+  }
+}
+
+.hidden-tablet {
+  @include media(tablet) {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  display: none !important;
+
+  @include media(mobile) {
+    display: initial !important;
+    @at-root div#{&}{
+      display: block !important;
+    }
+  }
+}
+
+.hidden-mobile {
+  @include media(mobile) {
+    display: none !important;
+  }
+}

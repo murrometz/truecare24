@@ -1,0 +1,65 @@
+/*************************
+ * Tooltip
+ ************************/
+
+[data-tippy-root] {
+    pointer-events: auto !important;
+
+    .tippy-box {
+        &[data-theme~='light-truecare'] {
+            border-radius: $inputBorderRadius;
+            overflow: hidden;
+        }
+
+        .tippy-content {
+            padding: 0;
+        }
+    }
+}
+
+.tooltip {
+    display: none;
+    overflow: hidden;
+    text-align: left;
+    /**
+    Prevent text selection
+
+     * IT
+     */
+    -ms-user-select: none;
+    /**
+     * Mozilla
+     */
+    -moz-user-select: none;
+    /**
+     * Conqueror
+     */
+    -khtml-user-select: none;
+    /**
+     * Safari and Chrome
+     */
+    -webkit-user-select: none;
+    user-select: none;
+
+    .tippy-content & {
+        display: block;
+    }
+}
+
+.tooltip {
+    & .item {
+        cursor: pointer;
+        padding: 10px 19px;
+
+        &:hover {
+            background: #e2f2f9;
+        }
+    }
+}
+
+.statuses-tooltip {
+    & .item {
+        @extend %status;
+        font-size: 1rem;
+    }
+}

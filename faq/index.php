@@ -1,7 +1,7 @@
 <?php
 $title = "Frequently Asked Questions";
 
-include $_SERVER["DOCUMENT_ROOT"]."/framework/template/header.php";
+include $_SERVER["DOCUMENT_ROOT"]."/framework/header.php";
 
-include $_SERVER["DOCUMENT_ROOT"]."/framework/template/footer.php";
+include $_SERVER["DOCUMENT_ROOT"]."/framework/footer.php";
 ?>

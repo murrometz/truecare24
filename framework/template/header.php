@@ -7,7 +7,7 @@
 </head>
 <body>
 <aside>
-    <?include $_SERVER["DOCUMENT_ROOT"]."/framework/template/includes/aside.php";?>
+    <?include 'includes/aside.php';?>
 </aside>
 <section class="main">
     <header>

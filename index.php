@@ -1,7 +1,7 @@
 <?php
 $title = "Matched providers";
 
-include $_SERVER["DOCUMENT_ROOT"]."/framework/template/header.php";
+include $_SERVER["DOCUMENT_ROOT"]."/framework/header.php";
 ?>
     <table class="info-table" id="matched-providers">
         <thead><tr class="table-title">
@@ -153,5 +153,5 @@ include $_SERVER["DOCUMENT_ROOT"]."/framework/template/header.php";
         </div>
     </div>
 <?php
-include $_SERVER["DOCUMENT_ROOT"]."/framework/template/footer.php";
+include $_SERVER["DOCUMENT_ROOT"]."/framework/footer.php";
 ?>

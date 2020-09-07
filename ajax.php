@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/bitrix/php_interface/init.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/framework/template/php_interface/init.php';
 
 use Twilio\TwiML\VoiceResponse;
 use Twilio\Rest\Client;

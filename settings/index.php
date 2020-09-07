@@ -1,7 +1,7 @@
 <?php
 $title = "Settings";
 
-include $_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php";
+include $_SERVER["DOCUMENT_ROOT"]."/framework/template/header.php";
 
 if ($_POST['twilio']) {
     foreach ($_POST['twilio'] as $code => $value) {
@@ -47,5 +47,5 @@ if ($_POST['twilio']) {
     </div>
 </form>
 <?php
-include $_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php";
+include $_SERVER["DOCUMENT_ROOT"]."/framework/template/footer.php";
 ?>

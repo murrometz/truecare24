@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+button, input[type=submit] {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0 10px;
+  height: $buttonHeight;
+  line-height: $buttonHeight;
+  background: url(../images/icons/Button.png) no-repeat;
+  background-size: 100% 100%;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+}

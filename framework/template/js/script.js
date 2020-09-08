@@ -39,9 +39,9 @@ $(() => {
 
     // Activating the rating in modal
     $('.modal .rating').raty({
-        'starHalf': '/images/icons/Star-half.png',
-        'starOff': '/images/icons/Star grey.png',
-        'starOn': '/images/icons/Star yellow.png',
+        'starHalf': '/framework/template/images/icons/Star-half.png',
+        'starOff': '/framework/template/images/icons/Star grey.png',
+        'starOn': '/framework/template/images/icons/Star yellow.png',
     });
 
     $(document).on('click', '.statuses-tooltip .item', (event) => {
